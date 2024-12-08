@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Header from "./components/header/header";
 import Footer from "./components/footer/page";
 
@@ -12,7 +11,7 @@ export default function Home() {
       <div className="flex flex-col justify-center items-center bg-slate-200 py-3">
         <h1 className="text-xl font-semibold">Hello Nike App</h1>
         <p className="text-sm">
-          Download the app to access everything Nike{" "}
+          Download the app to access everything Nike
           <a href="#" className="border-b-2 text-blue-500">
             Get Your Great
           </a>
