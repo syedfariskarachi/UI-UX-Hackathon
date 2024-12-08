@@ -1,101 +1,206 @@
 import Image from "next/image";
+import Link from "next/link";
+import Header from "./components/header/header";
+import Footer from "./components/footer/page";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Top section with logo and buttons */}
+     <Header/>
+      {/* App Section */}
+      <div className="flex flex-col justify-center items-center bg-slate-200 py-3">
+        <h1 className="text-xl font-semibold">Hello Nike App</h1>
+        <p className="text-sm">
+          Download the app to access everything Nike{" "}
+          <a href="#" className="border-b-2 text-blue-500">
+            Get Your Great
+          </a>
+        </p>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Banner Image and Product Details */}
+      <div>
+        <Image
+          src="/images/banner.png"
+          width={1170}
+          height={600}
+          alt="Nike Air Max Pulse"
+          className="mx-12 "
+        />
+        <div className="flex flex-col justify-center items-center py-6">
+          <p className="text-sm">First Look</p>
+          <h1 className="text-3xl font-semibold text-center">NIKE AIR MAX PULSE</h1>
+          <p className="text-center text-sm">
+            Extreme comfort. Hyper durable. Max volume. Introducing the Air Max Pulse
+            <br />
+            <span className="flex items-center justify-center">
+              - Designed to push you past your limits and help you go to the max.
+            </span>
+          </p>
+          <div className="flex gap-4 py-4">
+            <button className="bg-black text-white p-2 rounded">Notify Me</button>
+            <button className="bg-black text-white p-2 rounded">Shop Air Max</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Product List */}
+        <div className="mx-12">
+          <h1 className="text-xl font-semibold ">
+            Best of Air Max
+            <span className="float-right text-sm text-blue-500 cursor-pointer">Man'sShop</span>
+          </h1>
+          <ul className="flex gap-4 py-6 mx-2">
+            <li className="border-2 p-4">
+              <Image
+                src="/images/products/p1.png"
+                width={400}
+                height={400}
+                alt="Nike Air Max Pulse"
+              />
+              <p className="text-sm mt-2">
+                Nike Air Max Pulse{" "}
+                <span className="float-right text-lg font-semibold">₹13,995</span>
+                <br />
+                <span className="text-opacity-60">Women's Shoes</span>
+              </p>
+            </li>
+            <li className="border-2 p-4">
+              <Image
+                src="/images/products/p2.png"
+                width={400}
+                height={400}
+                alt="Nike Air Max Pulse"
+              />
+              <p className="text-sm mt-2">
+                Nike Air Max Pulse{" "}
+                <span className="float-right text-lg font-semibold">₹13,995</span>
+                <br />
+                <span className="text-opacity-60">Women's Shoes</span>
+              </p>
+            </li>
+            <li className="border-2 p-4">
+              <Image
+                src="/images/products/p3.png"
+                width={400}
+                height={400}
+                alt="Nike Air Max Pulse"
+              />
+              <p className="text-sm mt-2">
+                Nike Air Max Pulse{" "}
+                <span className="float-right text-lg font-semibold">₹16 995</span>
+                <br />
+                <span className="text-opacity-60">Women's Shoes</span>
+              </p>
+            </li>
+            {/* Add other products similarly */}
+          </ul>
+        </div>
+        <div className="mx-12  flex flex-col justify-center items-center">
+          <h1 className="text-xl font-semibold ">Featured</h1>
+          <Image src="/images/products/featured.png" width={1150} height={680} alt="not found" className="mx-12"/>
+          <h1 className="text-4xl">STEP INTO WHAT FEELS GOOD</h1>
+          <p>Cause everyone should know the feeling of in that perfect pair</p>
+          <button className="bg-black p-2 rounded text-white my-2">Find Your Shoe</button>
+        </div>
+          <div>
+          <p className="font-semibold text-2xl mx-12">Gear Up</p>
+        </div>
+        <div className="flex gap-2 mx-12">
+
+        <div className="flex flex-col w-[600]">
+          <div className="w-[550px] ">
+            <p className="float-right">Shop Men's </p>
+           </div>
+          <div className="flex gap-2 mx-3">
+            <div>
+            <Image src="/images/outfit/o1.png"width={290} height={300} alt="not found"/>
+            <p>Nike Dri ADv TEchKnit Ultra <span className="float-right font-semibold">₹3 895</span><br /><span style={{opacity:0.5}}>Men's Short-Sleeve <br />Running</span></p>
+
+            </div>
+            <div>
+
+            <Image src="/images/outfit/o2.png"width={285} height={300} alt="not found"/>
+            <p>Nike Dri-Fit Challenger <span className="float-right font-semibold">₹2 495</span><br />
+            <span style={{opacity:0.5}}>Men's 18cm(approx.)2- <br />in-1 versatile Shorts</span></p>
+            </div>
+          </div>
+          </div>
+        <div className="flex flex-col w-[600]">
+          <div className="w-[550px] ">
+            <p className="float-right">Shop Women's</p>
+          </div>
+          <div className="flex gap-2">
+            <div>
+
+            <Image src="/images/outfit/o3.png"width={285} height={300} alt="not found"/>
+            <p>Nike Dri-FIT ADv Run Division <span>₹5 295</span> <br /><span style={{opacity:0.5}}>Women's Long-Sleeve <br />Running Top</span></p>
+            </div>
+            <div>
+
+            <Image src="/images/outfit/o4.png"width={285} height={300} alt="not found"/>
+            <p>Nike Fast <span>₹ 3 795</span> <br /><span style={{opacity:0.5}}>Women's Mid-Rise 7/8 Running <br />Legging with Pockets</span></p>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div>
+          <h1 className="font-semibold text-2xl my-3 mx-12">
+            Don't Miss
+          </h1>
+          <Image src="/images/outfit/dontmiss.png" width={1160} height={200}alt="not found" className="m-auto"/>
+          <div className="flex flex-col justify-center items-center my-2">
+
+          <h1 className="text-4xl">FLIGHT ESSENTIALS</h1><br />
+          <p>Your built-to-last-week wears-but only Jordan Brand can deliver.</p><br />
+          <button className="bg-black text-white rounded px-2">Shop</button>
+          </div>
+        </div>
+        <div className="mx-2">
+          <h1 className="font-semibold text-2xl mx-12">The Essentials</h1>
+          <div className="flex gap-2 mx-12">
+            <Image src="/images/es/es1.png" width={377.2} height={500} alt="not found"/>
+            <Image src="/images/es/es2.png" width={377.2} height={500} alt="not found"/>
+            <Image src="/images/es/es3.png" width={377.2} height={500} alt="not found"/>
+          </div>
+        </div>
+        <div style={{width:"70%", marginTop:"30px"}} className=" m-auto py-16" >
+          <ul className="grid grid-cols-4 font-semibold  ">
+            <li>Icons</li>
+            <li>Shoes</li>
+            <li>Clothing</li>
+            <li>Kid's</li>
+          </ul>
+          <ul className="grid grid-cols-4">
+            <ul style={{opacity:"0.5"}}>
+              <li>Air Force 1</li>
+              <li>Huarache</li>
+              <li>Air Max 90</li>
+              <li>Air Max 95</li>
+            </ul>
+            <ul style={{opacity:"0.5"}}>
+              <li>All Shoes</li>
+              <li>Custom Shoes</li>
+              <li>Jordan Shoes</li>
+              <li>Running Shoes</li>
+            </ul>
+            <ul style={{opacity:"0.5"}}>
+              <li>All Clothing</li>
+              <li>Modest Wear</li>
+              <li>Hoodies & Pullovers</li>
+              <li>Shirt & Tops</li>
+            </ul>
+            <ul style={{opacity:"0.5"}}>
+              <li>Infant & Toddler Shoes</li>
+              <li>kid's Shoes</li>
+              <li>Kid's Jordan Shoes</li>
+              <li>Kid's Basketball Shoes</li>
+            </ul>
+          </ul>
+        </div>
+        <Footer/>
+      </div>
     </div>
+    
   );
 }
